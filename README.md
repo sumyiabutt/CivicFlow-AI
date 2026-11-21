@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="logos/naqsha-mark.svg" width="78" alt="Team Naqsha logo"><br>
+
 # CivicFlow AI
 
 **An AI-assisted permitting workspace for Pakistan.**<br>
@@ -173,7 +175,7 @@ locked while the applicant fixes them.
 ## Structure and architecture
 
 A static site: HTML, CSS and plain JavaScript. No framework, no build step, no dependencies and no
-server. The whole product is four files, plus the diagrams and screenshots in this README.
+server. The whole product is four files, plus the diagrams, screenshots and team logo in this README.
 
 ### Repository structure
 
@@ -185,6 +187,7 @@ server. The whole product is four files, plus the diagrams and screenshots in th
 ├── data.js                       sample content: authority, clauses, document types, fee schedule, seed apps
 ├── diagrams/                     the two diagrams in this README (SVG)
 ├── screenshots/                  the screens gallery in this README
+├── logos/                        Team Naqsha mark and lockups (SVG + PNG)
 └── CivicFlow-AI-Pitch-Best.pptx  the 14-slide pitch deck
 ```
 
@@ -236,9 +239,13 @@ push to `main` redeploys. The same files run on any static host.
 
 ## Team
 
+<div align="center">
+<img src="logos/naqsha-lockup-light.svg" width="330" alt="Team Naqsha">
+</div>
+
 **Team Naqsha** — BS Computer Science, Lahore, Pakistan.
 
-Questions, a demo or a pilot: [civicflow.ai@gmail.com](mailto:civicflow.ai@gmail.com)
+Questions, a demo or a pilot: [civicflow.naqsha.pk@gmail.com](mailto:civicflow.naqsha.pk@gmail.com)
 
 ## Sample data and limits
 

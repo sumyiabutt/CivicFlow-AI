@@ -74,6 +74,8 @@ h1,h2,h3{font-family:Georgia,"Times New Roman",serif; font-weight:400; margin:0;
 .sf-col a{color:var(--muted);}
 .sf-col a:hover{color:var(--teal-dark);}
 .sf-links{display:flex; flex-direction:column; gap:5px;}
+.sf-team{display:inline-flex; align-items:center; gap:7px;}
+.sf-team img{display:block; width:20px; height:20px; flex:none;}
 .sf-note{margin-top:6px; font-size:10.5px; line-height:1.6; color:var(--faint); max-width:220px;}
 .sf-bottom{display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; border-top:1px solid var(--line); padding-top:14px; font-size:10.5px; color:var(--faint);}
 

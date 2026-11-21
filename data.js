@@ -6,10 +6,10 @@
 window.CF_DATA = {
   contact: {
     team: "Team Naqsha",
-    members: "Sumyia Butt & Wardah Khan · BS Computer Science",
+    members: "Team Naqsha · BS Computer Science",
     school: "",
     demo: "https://civicflow-ai-i4vnn3ckt63.qoder.website/",
-    email: "civicflow.ai@gmail.com",
+    email: "civicflow.naqsha.pk@gmail.com",
     phone: ""
   },
 

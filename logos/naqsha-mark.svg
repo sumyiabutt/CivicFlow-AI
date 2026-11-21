@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Team Naqsha mark">
+  <rect width="512" height="512" rx="116" fill="#0f2b46"/>
+
+  <rect x="132" y="128" width="248" height="248" fill="none" stroke="#ffffff" stroke-opacity="0.92" stroke-width="13"/>
+
+  <rect x="182" y="178" width="148" height="148" fill="none" stroke="#2dd4bf" stroke-width="11" stroke-dasharray="18 14"/>
+
+  <path d="M406 84 L432 132 L380 132 Z" fill="#2dd4bf"/>
+
+  <path d="M132 412 L380 412" stroke="#2dd4bf" stroke-width="9" stroke-linecap="round"/>
+  <path d="M132 396 L132 428 M380 396 L380 428" stroke="#2dd4bf" stroke-width="9" stroke-linecap="round"/>
+</svg>
