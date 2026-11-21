@@ -154,17 +154,9 @@ locked while the applicant fixes them.
 5. **Estimate fees and timeline** — a sample fee schedule and a planning timeline.
 6. **Print or submit** — a printable report ready to attach to a filing.
 
-```mermaid
-flowchart LR
-    A["Applicant<br/>plot + project"] --> B["Resolve authority<br/>and clause set"]
-    B --> C["Document check<br/>3 documents"]
-    C --> D["Compliance report<br/>8 checks"]
-    D -->|flag| E["Cited clause<br/>reference + version"]
-    D -->|clean| F["Ready to submit<br/>printable report"]
-    D --> G["Fee and timeline<br/>estimate"]
-    E --> H["Fix and re-check"]
-    H --> D
-```
+<div align="center">
+<img src="diagrams/filing-flow.svg" alt="Flow: applicant → authority and clauses → document check → compliance report → flag, clean or fee estimate" width="100%">
+</div>
 
 ## Screens and routes
 
@@ -181,7 +173,7 @@ flowchart LR
 ## Structure and architecture
 
 A static site: HTML, CSS and plain JavaScript. No framework, no build step, no dependencies and no
-server. The whole product is four files, plus the images in this README.
+server. The whole product is four files, plus the diagrams and screenshots in this README.
 
 ### Repository structure
 
@@ -191,24 +183,16 @@ server. The whole product is four files, plus the images in this README.
 ├── styles.css                    design tokens and layout (desktop sidebar, mobile layout)
 ├── app.js                        hash router, screens, wizard, check engine, report, assistant, storage
 ├── data.js                       sample content: authority, clauses, document types, fee schedule, seed apps
-├── screenshots/                  images used in this README
+├── diagrams/                     the two diagrams in this README (SVG)
+├── screenshots/                  the screens gallery in this README
 └── CivicFlow-AI-Pitch-Best.pptx  the 14-slide pitch deck
 ```
 
 ### How the app is put together
 
-```mermaid
-flowchart TB
-    H["index.html<br/>shell and containers"] --> R["app.js<br/>hash router"]
-    S["styles.css<br/>tokens and layout"] --> H
-    R --> SCR["Screens<br/>overview, wizard, report, library, fees, assistant"]
-    R --> ENG["Check engine<br/>inputs + documents + clauses"]
-    R --> ASK["Assistant<br/>keyword match + citations"]
-    D["data.js<br/>clause corpus, fees, seed apps"] --> ENG
-    D --> ASK
-    D --> SCR
-    SCR --> LS["localStorage<br/>civicflow.apps.v1"]
-```
+<div align="center">
+<img src="diagrams/architecture.svg" alt="Architecture: index.html and styles.css shell, app.js router and check engine, data.js clause corpus, localStorage state" width="100%">
+</div>
 
 ### The eight checks
 

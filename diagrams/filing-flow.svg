@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="300" viewBox="0 0 1000 300" role="img" aria-label="How a filing moves through CivicFlow AI">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#94a3b8"/>
+    </marker>
+    <style>
+      .box{fill:#ffffff;stroke:#cbd5e1;stroke-width:1.5}
+      .t{font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;font-size:15px;font-weight:600;fill:#0f2b46}
+      .s{font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;font-size:12.5px;fill:#64748b}
+      .l{stroke:#94a3b8;stroke-width:1.5;fill:none}
+      .accent{fill:#0d9488}
+    </style>
+  </defs>
+
+  <rect x="20" y="40" width="210" height="80" rx="10" class="box"/>
+  <text x="125" y="72" text-anchor="middle" class="t">Applicant</text>
+  <text x="125" y="93" text-anchor="middle" class="s">plot + project, 4 fields</text>
+
+  <rect x="270" y="40" width="210" height="80" rx="10" class="box"/>
+  <text x="375" y="72" text-anchor="middle" class="t">Authority + clauses</text>
+  <text x="375" y="93" text-anchor="middle" class="s">the rule set for this case</text>
+
+  <rect x="520" y="40" width="210" height="80" rx="10" class="box"/>
+  <text x="625" y="72" text-anchor="middle" class="t">Document check</text>
+  <text x="625" y="93" text-anchor="middle" class="s">3 documents + fields</text>
+
+  <rect x="770" y="40" width="210" height="80" rx="10" class="box" stroke="#0d9488"/>
+  <text x="875" y="72" text-anchor="middle" class="t">Compliance report</text>
+  <text x="875" y="93" text-anchor="middle" class="s">8 checks, pass or flag</text>
+
+  <line x1="232" y1="80" x2="266" y2="80" class="l" marker-end="url(#a)"/>
+  <line x1="482" y1="80" x2="516" y2="80" class="l" marker-end="url(#a)"/>
+  <line x1="732" y1="80" x2="766" y2="80" class="l" marker-end="url(#a)"/>
+
+  <path d="M875,120 L875,168 M205,168 L875,168" class="l"/>
+  <line x1="205" y1="168" x2="205" y2="204" class="l" marker-end="url(#a)"/>
+  <line x1="500" y1="168" x2="500" y2="204" class="l" marker-end="url(#a)"/>
+  <line x1="800" y1="168" x2="800" y2="204" class="l" marker-end="url(#a)"/>
+
+  <rect x="80" y="208" width="250" height="72" rx="10" class="box"/>
+  <text x="205" y="238" text-anchor="middle" class="t">Flag</text>
+  <text x="205" y="259" text-anchor="middle" class="s">clause reference + version</text>
+
+  <rect x="375" y="208" width="250" height="72" rx="10" class="box"/>
+  <text x="500" y="238" text-anchor="middle" class="t">Clean</text>
+  <text x="500" y="259" text-anchor="middle" class="s">ready to submit, printable</text>
+
+  <rect x="690" y="208" width="220" height="72" rx="10" class="box"/>
+  <text x="800" y="238" text-anchor="middle" class="t">Fee + timeline</text>
+  <text x="800" y="259" text-anchor="middle" class="s">sample rates, estimate</text>
+</svg>
