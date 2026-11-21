@@ -1,169 +1,170 @@
-# CivicFlow AI — AI-assisted municipal permitting workspace
+<div align="center">
 
-CivicFlow AI is a working prototype of a permitting workspace for Pakistan. An applicant enters
-plot and project details, sees which authority and which by-laws apply, gets a document check and
-a compliance report where every flag cites its clause, and estimates fees and a timeline before
-filing. It guides the applicant — it never approves the project.
+# CivicFlow AI
 
-| | |
-| --- | --- |
-| **Live demo** | https://civicflow-ai-alpha.vercel.app/ |
-| **Also live at** | https://civicflow-ai-i4vnn3ckt63.qoder.website/ |
-| **Source** | https://github.com/sumyiabutt/CivicFlow-AI |
-| **Team** | Team Naqsha — Sumyia Butt, Wardah Khan · BS Computer Science · Lahore, Pakistan |
-| **Contact** | civicflow.ai@gmail.com |
+**An AI-assisted permitting workspace for Pakistan.**<br>
+Enter plot and project details, see which authority and by-laws apply, get a compliance report
+where every flag cites its clause, and estimate fees and timeline before filing.
 
-> This is a prototype. Every application, by-law clause, fee figure and document field inside it
-> is sample content written for the demo.
+[![Live demo](https://img.shields.io/badge/Live_demo-Open_the_site-0d9488?style=for-the-badge)](https://civicflow-ai-alpha.vercel.app/)
+[![Stack](https://img.shields.io/badge/stack-HTML_CSS_JS-f7df1e?style=for-the-badge)](#built-with)
+[![Backend](https://img.shields.io/badge/backend-none_browser_only-1e3a5f?style=for-the-badge)](#how-it-works)
+[![Prototype](https://img.shields.io/badge/status-working_prototype_sample_data-b45309?style=for-the-badge)](#prototype-notice)
 
-## What the demo covers
+[**Live demo**](https://civicflow-ai-alpha.vercel.app/) · [Screens](#screens) · [How it works](#how-a-filing-moves) · [Team](#team)
 
-The first market is residential and small commercial building plans in Lahore, starting with
-LDA-notified schemes. The demo follows one applicant journey end to end:
+<img src="screenshots/overview.jpg" alt="CivicFlow AI — applications overview" width="100%">
 
-1. **Describe the project** — plot size, land use, covered area, floors, society.
-2. **Resolve the authority and the rules** — the applicable authority and the clause set for
-   that plot type.
-3. **Check the documents** — the three documents a filing needs, with the fields read from each.
-4. **Read the compliance report** — pass/fail checks, each opening its cited clause.
-5. **Estimate fees and timeline** — a sample fee schedule and a planning timeline.
-6. **Print** — a printable version of the report for the applicant's file.
+</div>
+
+## What is CivicFlow AI?
+
+Building-plan approval in Pakistan runs on scattered by-law documents, a paper checklist and a
+queue. Most applications reach the counter incomplete, so they come back as objections — and the
+applicant pays a resubmission fee to learn something that was knowable on day one.
+
+CivicFlow AI is the layer *before* the counter. An applicant describes the plot, the workspace
+resolves the authority and the exact clauses that apply, checks the document set, and produces a
+compliance report where every flag names the clause it came from. It guides the applicant — it
+never approves the project.
+
+- No login, no install — everything runs in the browser.
+- Every flag is traceable to a clause, version and requirement.
+- English and Urdu, on screen and in the assistant.
+
+## Prototype notice
+
+> Every application, by-law clause, fee figure and document field in this build is **sample
+> content** written for the demo. Nothing is submitted to an authority, and nothing here is an
+> authority decision or legal advice.
+
+## Try the live demo
+
+**→ https://civicflow-ai-alpha.vercel.app/**
+
+Three things worth doing first:
+
+1. Open **New application** and run the four-step wizard with LDA-selected sample values — you
+   end on a clean, submission-ready report.
+2. Open application **CV-1042** from the overview — a rear setback and a floor-area-ratio flag,
+   each one clickable through to its clause.
+3. Open the **Assistant** and switch the toggle to **اردو** — ask about a setback and the answer
+   comes back in Urdu with its clause citation.
 
 ## Screens
 
+<table>
+  <tr>
+    <td width="50%"><img src="screenshots/authority.jpg" alt="Authority and rules step"></td>
+    <td width="50%"><img src="screenshots/documents.jpg" alt="Document check step"></td>
+  </tr>
+  <tr>
+    <td><b>Authority &amp; rules</b><br>Four inputs are enough to resolve the authority and pull the clause set for that plot, land use and floor count.</td>
+    <td><b>Document check</b><br>The three documents a filing needs, with the fields read from each and a consistency check against the application.</td>
+  </tr>
+  <tr>
+    <td><img src="screenshots/citation.jpg" alt="Clause citation modal"></td>
+    <td><img src="screenshots/library.jpg" alt="Regulation library"></td>
+  </tr>
+  <tr>
+    <td><b>Cited flags</b><br>Every flag opens its source: clause reference, version, requirement in plain language.</td>
+    <td><b>Regulation library</b><br>The verified data layer — searchable clauses in English and Urdu, each with a version label.</td>
+  </tr>
+  <tr>
+    <td><img src="screenshots/fees.jpg" alt="Fees and timeline estimator"></td>
+    <td><img src="screenshots/assistant-urdu.jpg" alt="Assistant answering in Urdu"></td>
+  </tr>
+  <tr>
+    <td><b>Fees &amp; timeline</b><br>Change the plot, use or floors and the estimate and scrutiny timeline update on a clearly labelled sample fee table.</td>
+    <td><b>Assistant (اردو)</b><br>Answers only from the indexed corpus, cites the clause it used, and says so when the corpus does not cover a question.</td>
+  </tr>
+</table>
+
+## How a filing moves
+
+1. **Describe the project** — project type, plot size, floors, society.
+2. **Resolve the authority and rules** — the applicable authority and clause set for that case.
+3. **Check the documents** — drawings, ownership papers and site plan, with the fields read from each.
+4. **Read the compliance report** — pass/fail checks, each one linked to its clause.
+5. **Estimate fees and timeline** — a sample fee schedule and a planning timeline.
+6. **Print or submit** — a printable report ready to attach to a filing.
+
+## Screens and routes
+
 | Route | Screen | What it shows |
 | --- | --- | --- |
-| `#/dashboard` | Overview | KPI tiles (active applications, need fixes, ready to submit, clauses indexed) and the application list with status and check counts |
+| `#/dashboard` | Overview | KPI tiles, application list with status chips and check counts |
 | `#/new` | New application | Four-step wizard: Project → Authority & rules → Documents → Report |
-| `#/app/:id` | Application | Status, summary, check list and filing timeline for one application |
+| `#/app/:id` | Application | Status, summary, check list and filing timeline |
 | `#/app/:id/report` | Compliance report | Printable report with cited clauses and pass/fail checks |
-| `#/library` | Regulation library | 12 sample clauses with requirement, version, verification note and Urdu glossary, searchable |
-| `#/fees` | Fees & timeline | Fee and timeline estimator built on the sample fee table |
-| `#/assistant` | Assistant | Corpus-only question assistant in English or Urdu that cites clauses and does not invent answers |
+| `#/library` | Regulation library | Sample clauses with requirement, version, verification note and Urdu glossary |
+| `#/fees` | Fees & timeline | Fee and timeline estimator on the sample fee table |
+| `#/assistant` | Assistant | Corpus-only question assistant in English or Urdu |
 
-### Overview
+## Built with
 
-Applications are listed with a status chip — **Ready to submit**, **Needs fixes**, **In review**
-or **Submitted** — plus "x / y checks passed" and the last update. "New application" opens the
-wizard; "Reset demo data" in the sidebar returns everything to the seeded sample state.
-
-### New application wizard
-
-| Step | Inputs |
-| --- | --- |
-| 1 · Project | Project type, plot size, land use, covered area, floors, society |
-| 2 · Authority & rules | Resolved authority and the clauses that apply to the case |
-| 3 · Documents | Architectural drawings, ownership documents, site plan — with sample extracted fields |
-| 4 · Report | Generated compliance report and filing timeline, with a link to the application |
-
-### Compliance report
-
-- Every check is pass or flag, with a clause chip that opens the clause reference, its quoted
-  requirement, version and verification note.
-- A timeline shows documents submitted, objection window and decision target.
-- **Print compliance report** produces a clean printable view (the browser print dialog handles
-  paper or PDF).
-
-### Regulation library
-
-Twelve sample clauses (jurisdiction, setbacks, coverage, height, parking, access, fire access,
-fees and more). Each entry carries a reference such as `By-law 4.3`, a requirement, a plain-language
-summary, a version label, a "Sample clause" verification note and an Urdu summary. Search works in
-English and Urdu.
-
-### Fees & timeline
-
-- Base rate by plot size, a land-use multiplier and a floors loading, from **Schedule C**.
-- Timeline: Day 0 documents submitted, Day 7 objections (if any), decision target.
-- Both are planning estimates on sample rates — the authority's queue decides the real date.
-
-### Assistant
-
-The assistant answers only from the 12 included sample clauses: it matches the question to
-clauses, shows the cited source and returns the sample Urdu gloss when Urdu is selected. If nothing
-in the corpus matches, it says so instead of guessing. English and Urdu answers can also be spoken
-where the browser provides voices. It is a keyword/corpus demo, not an LLM backend.
-
-## Project structure
+HTML, CSS and plain JavaScript — no framework, no build step, no dependencies.
 
 ```text
 .
-├── index.html   page shell, navigation, footer, modal and toast containers
-├── styles.css   design tokens and layout (desktop sidebar, mobile layout)
-├── app.js       hash router, screens, wizard, report logic, assistant, storage
-├── data.js      sample content: contact, authority, 12 clauses, doc types, fee schedule, seed apps
-└── README.md
+├── index.html      page shell, navigation, footer, modal and toast containers
+├── styles.css      design tokens and layout (desktop sidebar, mobile layout)
+├── app.js          hash router, screens, wizard, report logic, assistant, storage
+├── data.js         sample content: authority, clauses, doc types, fee schedule, seed apps
+└── screenshots/    images used in this README
 ```
-
-No framework, no build step, no dependencies. `index.html` loads `data.js` and `app.js` directly.
 
 ## How it works
 
-- **Routing:** hash routes (`#/dashboard`, `#/new`, `#/app/:id`, `#/app/:id/report`, `#/library`,
-  `#/fees`, `#/assistant`), rendered by a small router in `app.js`.
-- **State:** applications are saved in `localStorage` under `civicflow.apps.v1`. Four applications
-  are seeded on first load; "Reset demo data" clears the key and re-seeds.
-- **Checks:** the report is computed from the project inputs, the document fields and the clause
-  set — no network calls are made.
-- **Data:** all copy and sample rules live in `data.js`, so content can be updated without touching
-  the UI code.
-- **Privacy:** there is no login, no backend, no analytics and no external request. Nothing leaves
-  the browser.
+- **Routing** — hash routes rendered by a small router in `app.js`.
+- **State** — applications persist in `localStorage` under `civicflow.apps.v1`; four applications
+  are seeded on first load and "Reset demo data" returns to that state.
+- **Checks** — the report is computed from the project inputs, the document fields and the clause
+  set. No network calls.
+- **Assistant** — keyword/corpus matching over the same clause set, with English and Urdu output.
+  It is not an LLM backend.
+- **Privacy** — no login, no backend, no analytics, no external request. Nothing leaves the browser.
 
 ## Run locally
 
-Any static file server works; no tooling is required.
+Any static file server works; no tooling required.
 
 ```bash
 python -m http.server 8000
 ```
 
-Open <http://localhost:8000>. Opening `index.html` directly also works in most browsers.
+Then open http://localhost:8000 — opening `index.html` directly works in most browsers too.
 
-## Deploy on Vercel
+## Deploy
 
-The repository is a plain static site at its root, so Vercel needs no build configuration.
-
-1. Push the files to GitHub (this repository).
-2. In Vercel, go to **Add New… → Project** and import the `CivicFlow-AI` repository.
-3. Keep the defaults and confirm:
-   - **Framework Preset:** Other
-   - **Root Directory:** `./`
-   - **Build Command:** empty (Override off)
-   - **Output Directory:** empty
-   - **Install Command:** empty
-4. Click **Deploy**. Vercel publishes the files as-is; this repository is currently live at
-   https://civicflow-ai-alpha.vercel.app/.
-5. Every later push to `main` redeploys the site automatically.
-6. Optional: add a custom domain under **Settings → Domains**.
-
-No environment variables, server functions, database or storage are required. The same files can
-be served by any static host.
-
-## Updating the site
-
-| Change | File |
-| --- | --- |
-| Wording, clauses, fee table, sample applications, contact details | `data.js` |
-| Screens, routing, wizard logic, report and assistant behavior | `app.js` |
-| Colors, layout, spacing | `styles.css` |
-| Page title, meta description, footer links | `index.html` |
-
-`index.html` references the assets with a version query (`styles.css?v=19`, `data.js?v=19`,
-`app.js?v=19`). After editing one of those files, bump the number on all three tags so returning
-visitors get the new version. Then commit and push — Vercel redeploys on its own.
-
-## Sample data and limits
-
-- By-law text, fee rates and timeline are **sample content**, not an official notification and not
-  an authority decision.
-- Document fields are fixed sample values; this build does not run OCR or vision extraction.
-- Nothing is submitted to an authority. The report is a preview of what a filing would need.
-- The assistant is corpus-only and should not be read as legal advice.
-- No login and no server: data is device-local, and clearing browser storage removes it.
-- Urdu glosses are samples; speech input/output depends on the browser and installed voices.
+The repository root is a plain static site, so Vercel needs no configuration: import the repo,
+keep **Framework Preset: Other** with empty build, output and install commands, and deploy. Every
+push to `main` redeploys. The same files run on any static host.
 
 ## Team
 
-**Team Naqsha** — Sumyia Butt and Wardah Khan, BS Computer Science, Lahore, Pakistan.
-Questions, a demo or a pilot: [civicflow.ai@gmail.com](mailto:civicflow.ai@gmail.com).
+**Team Naqsha** — BS Computer Science, Lahore, Pakistan.
+
+| Member |
+| --- |
+| Sumyia Butt |
+| Wardah Khan |
+| Azam Khan |
+
+Questions, a demo or a pilot: [civicflow.ai@gmail.com](mailto:civicflow.ai@gmail.com)
+
+## Sample data and limits
+
+- By-law text, fee rates and timelines are sample content — not an official notification.
+- Document fields are fixed sample values; this build does not run OCR or vision extraction.
+- The assistant is corpus-only and is not legal advice.
+- Data is device-local; clearing browser storage removes it.
+
+---
+
+<div align="center">
+
+**Working prototype · sample data**<br>
+[Live demo](https://civicflow-ai-alpha.vercel.app/) · [Source](https://github.com/sumyiabutt/CivicFlow-AI)
+
+</div>
