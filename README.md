@@ -7,7 +7,8 @@ filing. It guides the applicant — it never approves the project.
 
 | | |
 | --- | --- |
-| **Live demo** | https://civicflow-ai-i4vnn3ckt63.qoder.website/ |
+| **Live demo** | https://civicflow-ai-alpha.vercel.app/ |
+| **Also live at** | https://civicflow-ai-i4vnn3ckt63.qoder.website/ |
 | **Source** | https://github.com/sumyiabutt/CivicFlow-AI |
 | **Team** | Team Naqsha — Sumyia Butt, Wardah Khan · BS Computer Science · Lahore, Pakistan |
 | **Contact** | civicflow.ai@gmail.com |
@@ -131,8 +132,8 @@ The repository is a plain static site at its root, so Vercel needs no build conf
    - **Build Command:** empty (Override off)
    - **Output Directory:** empty
    - **Install Command:** empty
-4. Click **Deploy**. Vercel publishes the files as-is and shows the assigned URL on the project
-   page (a `*.vercel.app` address).
+4. Click **Deploy**. Vercel publishes the files as-is; this repository is currently live at
+   https://civicflow-ai-alpha.vercel.app/.
 5. Every later push to `main` redeploys the site automatically.
 6. Optional: add a custom domain under **Settings → Domains**.
 
